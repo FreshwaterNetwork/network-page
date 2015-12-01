@@ -1,0 +1,29 @@
+﻿{
+	"googleAnalyticsPropertyId": "UA-28810260-5",
+    "global": {
+        "name": "Louisiana",
+		"description": "Louisiana is a water state. With over 125,000 miles of rivers, bayous, and streams and abundant annual rainfall (48 – 70 in yr‐1), water has been and will continue to be important and inextricably linked to our economy, culture, and fish and wildlife resources. The future sustainability of Louisiana’s natural resources, its drinking water, and economic development, will be underlain by assurance of a high quality and sustainable freshwater supply.",
+		"location": [-92.5, 31.5],
+		"thumbnailUrl": "img/geo-postcards/LA_postcard_watercolor.png",
+        "url": "http://maps.freshwaternetwork.org/louisiana",
+        "detailUrl": "http://www.nature.org/ourinitiatives/regions/northamerica/unitedstates/louisiana/index.htm",
+        "whatsNew": {
+            "url": "http://goo.gl/FS2HKp",
+            "description": "Hydrologic Impairment Assessments for Parishes and LDEQ sub-segments have been added to the Freshwater Assessment!"
+        }
+    },
+    "layers": [
+        { "url": "http://50.18.215.52/arcgis/rest/services/Louisiana_Freshwater/states/MapServer" }
+    ],
+    "regions": [
+		    
+        {
+            "name": "Mississippi",
+            "description": "The Great River state, Mississippi is defined by one of the world’s great rivers. The social fabric and economic ebb and flow of the state are intertwined with how the River rolls. Its past and future are inextricably linked to the rivers, streams, bayous and floodplains that define the people, enrich its culture, and provide an unparalleled natural heritage for its future generations.  <b>Data for the Mississippi site are being collected.  Look for the Mississippi Freshwater Assessment in late 2014.</b>",
+            "location": [-89.7, 33.3],
+			"thumbnailUrl": "img/geo-postcards/Mississippi_postcard.png"
+                
+        }
+    ]   
+  
+}

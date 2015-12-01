@@ -1,0 +1,272 @@
+/* -------------------------------------------------- 
+   Table of Contents
+-----------------------------------------------------
+:: Shared Styles
+:: Top Bar
+:: Map & Content
+:: Media Queries
+*/
+
+
+/* -----------------------------------------
+   Shared Styles
+----------------------------------------- */
+
+@import url(http://fonts.googleapis.com/css?family=Fjalla+One|Open+Sans:400,700,300);
+
+html, body {
+    height: 100%;
+    min-height: 100%;
+
+    /* overflow: auto;    WARNING: Page will NOT scroll with this set */
+
+    font-family: 'Open Sans', 'Helvetica Neue', Arial, Helvetica, sans-serif;
+}
+h1, h2 {
+    font-family: 'Fjalla One', 'Helvetica Neue', Arial, Helvetica, sans-serif;
+}
+h3, h4, h5, h6 {
+    font-family: 'Open Sans', 'Helvetica Neue', Arial, Helvetica, sans-serif;
+}
+
+
+/* -----------------------------------------
+   Top Bar Styling
+----------------------------------------- */
+
+.top-bar {
+    margin-bottom: 0;
+    background: #30BBC1;
+    background: rgba(0,0,0,.25);
+    }
+    .top-bar ul > li.divider {
+        background: white;
+        background: rgba(255,255,255,.5);
+    }
+    .top-bar ul > li.name h1 {
+        background: white;
+        position: relative;
+        float: left;
+        }
+        .top-bar ul > li.name h1:after {
+            content: '';
+            position: absolute;
+            right: -15px;
+            top: 0;
+            width: 0;
+            height: 0;
+            border-top: 0px solid transparent;
+            border-left: 15px solid white;
+            border-bottom: 45px solid transparent;
+        }
+        .top-bar ul > li.name h1 a {
+            color: #49A942;
+            text-transform: uppercase;
+            font-size: 16px !important;
+        }
+    .top-bar ul > li.name h2 {
+        font-size: 16px;
+        float: left;
+        margin-left: 25px;
+        color: white;
+        text-transform: uppercase;
+    }
+        
+    .top-bar ul > li:not(.name):hover, 
+    .top-bar ul > li:not(.name).active, 
+    .top-bar ul > li:not(.name):focus {
+        background: white;
+        background: rgba(255,255,255,.25);
+        }
+        .top-bar ul > li:not(.name):hover a, 
+        .top-bar ul > li:not(.name).active a, 
+        .top-bar ul > li:not(.name):focus a {
+            color: rgb(14, 133, 138);
+            color: rgba(255,255,255,1);
+        }
+    
+    .top-bar ul.left {
+        margin-left: 26px;
+        font-size: 16px;
+        font-weight: bold;
+        color: white;
+        text-transform: uppercase;
+    }
+    
+    
+
+/* -----------------------------------------
+   Map & Content
+----------------------------------------- */
+
+#map {
+    height: 600px;
+    width: 100%;
+}
+
+.esriSimpleSliderTL {
+    top: 65px;
+}
+.content {
+    margin: 20px auto;
+}
+.tipsy-inner {
+    padding: 8px 12px 8px 12px;
+}
+
+#site-details {
+    padding: 0 15px;
+    }
+    #site-details > h1 {
+        color: #49A942;
+        font-size: 36px;
+        text-transform: uppercase;
+    }
+    #site-details > div {
+        font-size: 14px;
+        line-height: 21px;
+        color: #405D68;
+    }
+
+#site-blocks {
+    margin: 25px 0;
+    }
+    #site-blocks > .region {}
+        #site-blocks > .region .button {
+            background: #80B84D;
+            color: white;
+            box-shadow: none;
+            border: none;
+            border-radius: 0;
+            padding: 12px 20px 14px;
+            }
+            #site-blocks > .region .button.primary {
+                background: #1590FF;
+            }
+        #site-blocks > .region > .row {
+            margin-top: 25px;
+        }
+        #site-blocks > .region .region-header {
+            height: 52px;
+            border-top: 1px solid #CCC;
+            border-bottom: 1px solid transparent;
+            background: #F1F2F2;
+            font-size: 21px;
+            line-height: 50px;
+            padding-left: 14px;
+            color: #888;
+            cursor: pointer;
+            font-family: 'Fjalla One', 'Helvetica Neue', Arial, Helvetica, sans-serif;
+            text-transform: uppercase;
+            }
+            #site-blocks > .region .region-header:hover {
+                background: #E1E2E2;
+            }
+            #site-blocks > .region:last-child > .region-header {
+                border-bottom: 1px solid #CCC;
+            }
+            #site-blocks > .region .region-header.active {
+                border-top: 1px solid #24648D;
+                border-bottom: 1px solid #24648D;
+                background: #24648D;
+                color: #FFF;
+            }
+            
+        #site-blocks > .region .region-thumb {
+            height: 150px;
+            margin-bottom: 25px;
+        }
+        #site-blocks > .region .region-detail {
+            margin-bottom: 25px;
+            }
+            #site-blocks > .region .region-detail .region-name {
+                margin-bottom: 8px;
+                font-size: 18px;
+            }
+            #site-blocks > .region .region-detail .region-desc {
+                    margin-bottom: 20px;
+                    font-size: 14px;
+                    line-height: 21px;
+                    color: #405D68;
+                }
+                #site-blocks > .region .region-detail .sub-list {
+                
+                    }
+                    #site-blocks > .region .region-detail .sub-list .region:last-child .region-header {
+                        border-bottom: 1px solid #CCC;
+                        }
+                        #site-blocks > .region .region-detail .sub-list .region:last-child .region-header.active {
+                            border-bottom: 1px solid #26648E;
+                        }
+                    #site-blocks > .region .region-detail .sub-list .region > .row {
+                        margin-top: 15px;
+                    }
+                    #site-blocks > .region .region-detail .sub-list .region-thumb {
+                        height: 100px;
+                    }
+                
+            #site-blocks > .region .region-detail .button {
+                margin-right: 5px;
+                margin-bottom: 15px;
+            }
+    
+#footer {
+    padding: 15px;
+}
+
+ul {
+    list-style: none;
+}
+#block-menu-menu-footer-navigation ul.menu li {
+    float: left;
+    line-height: 1.3em;
+}
+
+#block-menu-menu-footer-navigation ul.menu li a {
+    display: block;
+    font-weight: bold;
+    border-right: 1px solid #CCC;
+    padding: 0 11px;
+    font-size: 11px;
+}
+
+#block-menu-menu-footer-navigation ul.menu li.last a {
+    border: none;
+    padding-right: 0;
+}
+
+#footer #block-block-11 p {
+    color: #515151;
+    font-size: 11px;
+}
+#block-menu-menu-footer-navigation ul.menu {
+    font-size: 11px;
+    float: right;
+}
+
+#myModal iframe {  
+    width: 100%;
+    min-height: 400px;
+}
+
+#partner-logos img {
+    margin-right: 10px;
+}
+
+/* -----------------------------------------
+   Media Queries
+----------------------------------------- */
+
+@media all and (max-width: 720px) {
+    .top-bar ul > li.name {
+        background: transparent;
+    }
+    .top-bar ul > li.divider {
+        border-top: none;
+        border-bottom: 1px solid white;
+        border-bottom: 1px solid rgba(255,255,255,0.5);
+    }
+}
+
+/* Move the tooltip tail slightly left of center because the marker image is not center aligned. */
+.tipsy-s .tipsy-arrow { margin-left: -14px; }

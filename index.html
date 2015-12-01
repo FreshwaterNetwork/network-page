@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>TNC Freshwater Network</title>
+        <meta name="description" content="">
+
+        <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon" />
+        <link rel="stylesheet" href="//js.arcgis.com/3.8/js/esri/css/esri.css">
+        <link rel="stylesheet" href="css/foundation.min.css">
+        <link rel="stylesheet" href="css/tipsy.css" type="text/css" />
+        <link rel="stylesheet" href="css/app.css">
+        <script src="js/vendor/modernizr-2.6.2.min.js"></script>
+        <script src="js/vendor/underscore-1.4.3.min.js"></script>
+    </head>
+    <body>
+        <!-- TOP BAR, FIXED TO THE TOP OF THE SCREEN -->
+        <div class="fixed">
+            <nav class="top-bar">
+                <ul>
+                    <li class="name">
+                        <h1><a href="http://www.nature.org/ourinitiatives/habitats/riverslakes/index.htm" target="_blank">Freshwater</a></h1>
+                    </li>
+                    <!-- USED FOR SMALLER SCREENS TO CONDENSE NAVIGATION -->
+                    <li class="toggle-topbar"><a href="#"></a></li>
+                </ul>
+                <section>
+                    <ul class="right">
+                    </ul>
+                </section>
+            </nav>
+        </div>
+        <div id="map"></div>
+        </div>
+        <!--[if lt IE 7]>
+            <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
+        <![endif]-->
+
+        <div class="row content">
+            <div id="site-details" class="twelve">
+				<div>The Freshwater Network spans across states, regions, and local
+					jurisdictions and can be applied globally.  The green hatching
+					show states currently in the Network.  
+					<b>
+						Click on the point markers on the map or navigate through the
+						list of states below to visit the Freshwater Network web maps.
+					</b>
+					Keep visiting to watch the network grow as more states join!
+				</div>
+                <h1>Freshwater Network</h1>
+                <div>Welcome to the Freshwater Network.  The goal of this network is to 
+					provide scientific information to support decision making about
+					freshwater resources.  The network is comprised of a number of
+					statewide examinations of the status and trends of freshwater
+					resources, all displayed in an online mapping system that contains
+					both decision-support capability and access to all data sets.  Users
+					will find a wealth of information about water resources and watersheds,
+					as well as robust analyses and modeling, showing watershed health and
+					landscape integrity, water quality, surface flow, biological health,
+					and groundwater resources.  The Network also allows users to
+					investigate across states, when watersheds don’t follow political
+					boundaries, and into the coastal zone to understand the connectivity 
+					of our freshwater and coastal resources.
+					
+					We hope that users find the Freshwater Network both a powerful and
+					user-friendly resource for meeting their needs and ensuring a healthy
+					supply of clean water for nature and people. 
+	
+                </div>
+            </div>
+            <div id="site-blocks"></div>
+        </div>
+
+<div id="footer" class="row">  <div>
+    <section id="partner-logos" class="text-center block block-block">
+        <a href="http://www.nature.org" target="_blank"><img src="img/TNCLogoPrimary_RGB2.jpg" width="200" height="125"></a>
+        <a href="http://www.siu.edu" target="_blank"><img src="img/SIUlogo_2color.png" width="214.9" height="74.9"></a>
+        <a href="http://www.nsf.gov" target="_blank"><img src="img/nsf1.gif" width="91" height="91"></a>
+        <a href="http://www.usm.edu" target="_blank"><img src="img/usm_logo.png" width="200" height="93"></a>
+    </section>
+    <section id="block-menu-menu-footer-navigation" class="block block-menu">
+        <ul class="menu nav">
+
+            <li class="leaf"><a href="http://www.nature.org/about-us/governance/terms-of-use/index.htm?src=f9" title="Legal Disclosure" target="_blank">Legal Disclosure</a></li>
+            <li class="last leaf"><a href="http://www.nature.org/about-us/governance/privacy-policy.xml" title="Privacy Statement" target="_blank">Privacy Statement</a></li>
+        </ul>  
+    </section>
+    <section id="block-block-11" class="block block-block">
+        <p>© The Nature Conservancy. All rights reserved</p>
+    </section> <!-- /.block -->
+    </div>
+</div>
+        <script id="template-region" type="text/template">
+            <div class="region twelve columns">
+                <div class="region-header"><%= name %></div>
+                <div class="row">
+                    <img class="region-thumb three columns" src="<%= thumbnailUrl %>"/>
+                    <div class="region-detail nine columns">
+                        <div class="region-desc"><%= description %></div>
+                        <% if (typeof detailUrl !== 'undefined' && detailUrl) { %>
+                        <a href="<%= detailUrl %>" class="secondary button radius" target="_blank">Background</a>
+                        <% } %>
+                        <% if (typeof whatsNew !== 'undefined' && whatsNew && whatsNew.url) { %>
+                          <a href="<%= whatsNew.url %>" title="<%= whatsNew.description %>" class="whatsnew secondary button radius" target="_blank">What's New?</a>
+                        <% } %>
+                        <% if (typeof url !== 'undefined' && url) { %>
+                            <a href="<%= url %>" class="primary button radius" target="_blank">Map</a>
+                        <% } %>
+                        <div class="row sub-list"></div>
+                    </div>
+                </div>
+            </div>
+        </script>
+
+        <script src="js/vendor/foundation.min.js"></script>
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+        <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.8.3.min.js"><\/script>')</script>
+
+        <script src="js/vendor/jquery.tipsy.min.js"></script>
+        <script src="js/vendor/jquery.visible.min.js"></script>
+        <script src="//js.arcgis.com/3.8"></script>
+        <script src="js/TNC.js"></script>
+        <script src="js/TemplateLoader.js"></script>
+        <script src="js/RegionExpander.js"></script>
+        <script src="js/App.js"></script>
+        <script src="js/RegionList.js"></script>
+        <script src="js/SvgDomWrapper.js"></script>
+        <script src="js/Map.js"></script>
+
+        <script type="text/javascript">
+            dojo.require('esri.map');
+            dojo.addOnLoad(TNC.app.init);
+        </script>
+
+        <script>
+            var _gaq=[['_setAccount','UA-XXXXX-X'],['_trackPageview']];
+            (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+            g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
+            s.parentNode.insertBefore(g,s)}(document,'script'));
+        </script>
+        <div id="myModal" class="reveal-modal">
+          <a class="close-reveal-modal">x</a>
+          <iframe src="partners.html" seamless="seamless"></iframe>
+        </div>
+    </body>
+</html>
